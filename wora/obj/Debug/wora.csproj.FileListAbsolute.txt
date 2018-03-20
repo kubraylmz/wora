@@ -69,3 +69,5 @@ C:\Users\hrnn\source\repos\wora\wora\obj\Debug\wora.csproj.CoreCompileInputs.cac
 C:\Users\hrnn\source\repos\wora\wora\obj\Debug\wora.csproj.CopyComplete
 C:\Users\hrnn\source\repos\wora\wora\obj\Debug\wora.dll
 C:\Users\hrnn\source\repos\wora\wora\obj\Debug\wora.pdb
+C:\Users\kubra\Desktop\wora\wora\obj\Debug\wora.csprojResolveAssemblyReference.cache
+C:\Users\kubra\Desktop\wora\wora\obj\Debug\wora.csproj.CoreCompileInputs.cache
