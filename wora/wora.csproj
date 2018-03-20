@@ -1,0 +1,733 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D9A6F89B-CC93-4912-80F4-6BAD25C69901}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>wora</RootNamespace>
+    <AssemblyName>wora</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="wp-content\gorunum.css" />
+    <Content Include="wp-content\wora\150x44beyaz.png" />
+    <Content Include="wp-content\wora\blue.png" />
+    <Content Include="wp-content\wora\wora-world-e1502875190739.jpg" />
+    <Content Include="wp-content\wora\wora.png" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config" />
+    <Content Include="wp-admin\admin-ajax.html" />
+    <Content Include="wp-admin\images\loading.gif" />
+    <Content Include="wp-admin\images\w-logo-blue7a53.png" />
+    <Content Include="wp-admin\js\password-strength-meter.min341d.js" />
+    <Content Include="wp-admin\load-scripts3369.php" />
+    <Content Include="wp-admin\load-styles6430.css" />
+    <Content Include="wp-content\plugins\bbpress\templates\default\js\topic6640.js" />
+    <Content Include="wp-content\plugins\buddypress\bp-core\js\confirm.min6fca.js" />
+    <Content Include="wp-content\plugins\buddypress\bp-core\js\jquery-cookie.min6fca.js" />
+    <Content Include="wp-content\plugins\buddypress\bp-core\js\jquery-query.min6fca.js" />
+    <Content Include="wp-content\plugins\buddypress\bp-core\js\jquery-scroll-to.min6fca.js" />
+    <Content Include="wp-content\plugins\buddypress\bp-core\js\widget-members.min6fca.js" />
+    <Content Include="wp-content\plugins\buddypress\bp-groups\js\widget-groups.min6fca.js" />
+    <Content Include="wp-content\plugins\buddypress\bp-templates\bp-legacy\css\buddypress.min6fca.css" />
+    <Content Include="wp-content\plugins\buddypress\bp-templates\bp-legacy\js\buddypress.min6fca.js" />
+    <Content Include="wp-content\plugins\buddypress\bp-templates\bp-legacy\js\password-verify.min6fca.js" />
+    <Content Include="wp-content\plugins\contact-form-7\includes\css\stylesc1f9.css" />
+    <Content Include="wp-content\plugins\contact-form-7\includes\js\jquery.form.mind03d.js" />
+    <Content Include="wp-content\plugins\contact-form-7\includes\js\scriptsc1f9.js" />
+    <Content Include="wp-content\plugins\essential-grid\public\assets\css\settings5bfb.css" />
+    <Content Include="wp-content\plugins\essential-grid\public\assets\font\egfontdde9.svg" />
+    <Content Include="wp-content\plugins\essential-grid\public\assets\images\ajax-loader.gif" />
+    <Content Include="wp-content\plugins\essential-grid\public\assets\images\loader.gif" />
+    <Content Include="wp-content\plugins\essential-grid\public\assets\js\jquery.themepunch.essential.min5bfb.js" />
+    <Content Include="wp-content\plugins\essential-grid\public\assets\js\jquery.themepunch.tools.min5bfb.js" />
+    <Content Include="wp-content\plugins\essential-grid\public\assets\js\lightbox5bfb.js" />
+    <Content Include="wp-content\plugins\js_composer\assets\css\js_composer.min0147.css" />
+    <Content Include="wp-content\plugins\js_composer\assets\fonts\vc_grid\vc_grid_v157a1.svg" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\flickr.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\address-book.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\alarm-clock.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\anchor.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\application-image.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\arrow.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\asterisk.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\auction-hammer.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\balloon-buzz.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\balloon-facebook.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\balloon-twitter.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\balloon.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\battery-full.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\binocular.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\blue-document-excel.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\blue-document-image.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\blue-document-music.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\blue-document-office.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\blue-document-pdf.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\blue-document-powerpoint.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\blue-document-word.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\bookmark.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\camcorder.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\camera.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\chart-pie.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\chart.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\clock.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\control.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\fire.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\heart.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\mail.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\plus-shield.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\icons\video.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\toggle_close.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\images\toggle_open.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\js\dist\js_composer_front.min0147.js" />
+    <Content Include="wp-content\plugins\js_composer\assets\lib\bower\jquery-ui-tabs-rotate\jquery-ui-tabs-rotate.min0147.js" />
+    <Content Include="wp-content\plugins\js_composer\assets\lib\bower\progress-circle\ProgressCircle.min0147.js" />
+    <Content Include="wp-content\plugins\js_composer\assets\lib\vc_chart\jquery.vc_chart.min0147.js" />
+    <Content Include="wp-content\plugins\js_composer\assets\lib\waypoints\waypoints.min0147.js" />
+    <Content Include="wp-content\plugins\js_composer\assets\vc\alert.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\vc\exclamation.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\vc\info.png" />
+    <Content Include="wp-content\plugins\js_composer\assets\vc\tick.png" />
+    <Content Include="wp-content\plugins\lifterlms\assets\chosen\chosen-sprite%402x.png" />
+    <Content Include="wp-content\plugins\lifterlms\assets\chosen\chosen-sprite.png" />
+    <Content Include="wp-content\plugins\lifterlms\assets\chosen\chosen.jquery.min341d.js" />
+    <Content Include="wp-content\plugins\lifterlms\assets\chosen\chosen.min341d.css" />
+    <Content Include="wp-content\plugins\lifterlms\assets\css\lifterlms.min341d.css" />
+    <Content Include="wp-content\plugins\lifterlms\assets\fonts\fontawesome\fontawesome-webfont78ce.svg" />
+    <Content Include="wp-content\plugins\lifterlms\assets\js\llms-ajax.min341d.js" />
+    <Content Include="wp-content\plugins\lifterlms\assets\js\llms-form-checkout.min341d.js" />
+    <Content Include="wp-content\plugins\lifterlms\assets\js\llms.min341d.js" />
+    <Content Include="wp-content\plugins\lifterlms\assets\js\vendor\collapse341d.js" />
+    <Content Include="wp-content\plugins\lifterlms\assets\js\vendor\jquery.matchHeight341d.js" />
+    <Content Include="wp-content\plugins\lifterlms\assets\js\vendor\transition341d.js" />
+    <Content Include="wp-content\plugins\revslider\public\assets\assets\coloredbg.png" />
+    <Content Include="wp-content\plugins\revslider\public\assets\assets\gridtile.png" />
+    <Content Include="wp-content\plugins\revslider\public\assets\assets\gridtile_3x3.png" />
+    <Content Include="wp-content\plugins\revslider\public\assets\assets\gridtile_3x3_white.png" />
+    <Content Include="wp-content\plugins\revslider\public\assets\assets\gridtile_white.png" />
+    <Content Include="wp-content\plugins\revslider\public\assets\assets\loader.gif" />
+    <Content Include="wp-content\plugins\revslider\public\assets\css\closedhand.cur" />
+    <Content Include="wp-content\plugins\revslider\public\assets\css\openhand.cur" />
+    <Content Include="wp-content\plugins\revslider\public\assets\css\settingsad79.css" />
+    <Content Include="wp-content\plugins\revslider\public\assets\fonts\revicons\revicons90c6.svg" />
+    <Content Include="wp-content\plugins\revslider\public\assets\js\jquery.themepunch.revolution.minad79.js" />
+    <Content Include="wp-content\plugins\the-events-calendar\src\resources\css\tribe-events-full-mobile.min3a05.css" />
+    <Content Include="wp-content\plugins\the-events-calendar\src\resources\css\tribe-events-full.min3a05.css" />
+    <Content Include="wp-content\plugins\the-events-calendar\src\resources\css\tribe-events-theme-mobile.min3a05.css" />
+    <Content Include="wp-content\plugins\the-events-calendar\src\resources\css\tribe-events-theme.min3a05.css" />
+    <Content Include="wp-content\plugins\the-events-calendar\src\resources\images\events-bar\icon-day%402x.png" />
+    <Content Include="wp-content\plugins\the-events-calendar\src\resources\images\events-bar\icon-day.png" />
+    <Content Include="wp-content\plugins\the-events-calendar\src\resources\images\events-bar\icon-gear%402x.png" />
+    <Content Include="wp-content\plugins\the-events-calendar\src\resources\images\events-bar\icon-list%402x.png" />
+    <Content Include="wp-content\plugins\the-events-calendar\src\resources\images\events-bar\icon-list.png" />
+    <Content Include="wp-content\plugins\the-events-calendar\src\resources\images\events-bar\icon-map%402x.png" />
+    <Content Include="wp-content\plugins\the-events-calendar\src\resources\images\events-bar\icon-map.png" />
+    <Content Include="wp-content\plugins\the-events-calendar\src\resources\images\events-bar\icon-month%402x.png" />
+    <Content Include="wp-content\plugins\the-events-calendar\src\resources\images\events-bar\icon-month.png" />
+    <Content Include="wp-content\plugins\the-events-calendar\src\resources\images\events-bar\icon-photo%402x.png" />
+    <Content Include="wp-content\plugins\the-events-calendar\src\resources\images\events-bar\icon-photo.png" />
+    <Content Include="wp-content\plugins\the-events-calendar\src\resources\images\events-bar\icon-search%402x.png" />
+    <Content Include="wp-content\plugins\the-events-calendar\src\resources\images\events-bar\icon-week%402x.png" />
+    <Content Include="wp-content\plugins\the-events-calendar\src\resources\images\events-bar\icon-week.png" />
+    <Content Include="wp-content\plugins\the-events-calendar\src\resources\images\tribe-loading.gif" />
+    <Content Include="wp-content\plugins\the-events-calendar\src\resources\images\tribe-theme\tribe-theme-tooltips%402x.png" />
+    <Content Include="wp-content\plugins\the-events-calendar\src\resources\images\tribe-theme\tribe-theme-tooltips.png" />
+    <Content Include="wp-content\plugins\the-events-calendar\src\resources\images\tribe-tooltips%402x.png" />
+    <Content Include="wp-content\plugins\the-events-calendar\src\resources\images\tribe-tooltips.png" />
+    <Content Include="wp-content\plugins\the-events-calendar\src\resources\js\embedded-map.min341d.js" />
+    <Content Include="wp-content\plugins\the-events-calendar\src\resources\js\tribe-events-ajax-calendar.min3a05.js" />
+    <Content Include="wp-content\plugins\the-events-calendar\src\resources\js\tribe-events-ajax-day.min3a05.js" />
+    <Content Include="wp-content\plugins\the-events-calendar\src\resources\js\tribe-events-ajax-list.min3a05.js" />
+    <Content Include="wp-content\plugins\the-events-calendar\src\resources\js\tribe-events-bar.min3a05.js" />
+    <Content Include="wp-content\plugins\the-events-calendar\src\resources\js\tribe-events.min3a05.js" />
+    <Content Include="wp-content\plugins\the-events-calendar\vendor\bootstrap-datepicker\css\datepicker341d.css" />
+    <Content Include="wp-content\plugins\the-events-calendar\vendor\bootstrap-datepicker\js\bootstrap-datepicker.mincf1b.js" />
+    <Content Include="wp-content\plugins\the-events-calendar\vendor\jquery-placeholder\jquery.placeholder.min5d0a.js" />
+    <Content Include="wp-content\plugins\the-events-calendar\vendor\jquery-resize\jquery.ba-resize.min4963.js" />
+    <Content Include="wp-content\plugins\the-events-calendar\vendor\jquery\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="wp-content\plugins\the-events-calendar\vendor\jquery\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="wp-content\plugins\the-events-calendar\vendor\jquery\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="wp-content\plugins\the-events-calendar\vendor\jquery\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="wp-content\plugins\the-events-calendar\vendor\jquery\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="wp-content\plugins\the-events-calendar\vendor\jquery\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="wp-content\plugins\the-events-calendar\vendor\jquery\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="wp-content\plugins\the-events-calendar\vendor\jquery\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="wp-content\plugins\the-events-calendar\vendor\jquery\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="wp-content\plugins\the-events-calendar\vendor\jquery\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="wp-content\plugins\the-events-calendar\vendor\jquery\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="wp-content\plugins\the-events-calendar\vendor\jquery\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="wp-content\plugins\the-events-calendar\vendor\jquery\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="wp-content\plugins\the-events-calendar\vendor\jquery\smoothness\jquery-ui-1.8.23.custom341d.css" />
+    <Content Include="wp-content\plugins\woocommerce\assets\js\frontend\cart-fragments.min6fca.js" />
+    <Content Include="wp-content\plugins\woocommerce\assets\js\frontend\woocommerce.min6fca.js" />
+    <Content Include="wp-content\plugins\woocommerce\assets\js\jquery-blockui\jquery.blockUI.min44fd.js" />
+    <Content Include="wp-content\plugins\woocommerce\assets\js\jquery-cookie\jquery_cookie.mine7f0.js" />
+    <Content Include="wp-content\plugins\wp-pagenavi\pagenavi-css44fd.css" />
+    <Content Include="wp-content\plugins\wp-postratings\images\loading.gif" />
+    <Content Include="wp-content\plugins\wp-postratings\postratings-cssc936.css" />
+    <Content Include="wp-content\plugins\wp-postratings\postratings-js.js" />
+    <Content Include="wp-content\plugins\wp-postratings\postratings-jsc936.js" />
+    <Content Include="wp-content\themes\images\forum-icons1059.html" />
+    <Content Include="wp-content\themes\images\private-reply-icon1059.html" />
+    <Content Include="wp-content\themes\michigan\css\bbpress6640.css" />
+    <Content Include="wp-content\themes\michigan\css\dyncss341d.css" />
+    <Content Include="wp-content\themes\michigan\css\master-min6e0e.css" />
+    <Content Include="wp-content\themes\michigan\fonts\et-line.svg" />
+    <Content Include="wp-content\themes\michigan\fonts\fontawesome-webfont78ce.svg" />
+    <Content Include="wp-content\themes\michigan\fonts\linecons.svg" />
+    <Content Include="wp-content\themes\michigan\fonts\Pe-icon-7-strokebb1d.svg" />
+    <Content Include="wp-content\themes\michigan\fonts\Simple-Line-Iconsb26c.svg" />
+    <Content Include="wp-content\themes\michigan\fonts\themify9f24.svg" />
+    <Content Include="wp-content\themes\michigan\images\accordion-ico.png" />
+    <Content Include="wp-content\themes\michigan\images\alert-error-ico.png" />
+    <Content Include="wp-content\themes\michigan\images\alert-info-ico.png" />
+    <Content Include="wp-content\themes\michigan\images\alert-notice-ico.png" />
+    <Content Include="wp-content\themes\michigan\images\alert-success-ico.png" />
+    <Content Include="wp-content\themes\michigan\images\arrows2.png" />
+    <Content Include="wp-content\themes\michigan\images\avatr1.png" />
+    <Content Include="wp-content\themes\michigan\images\bdbg1.png" />
+    <Content Include="wp-content\themes\michigan\images\blg-date-botpic1.html" />
+    <Content Include="wp-content\themes\michigan\images\blue.png" />
+    <Content Include="wp-content\themes\michigan\images\curriculum-t1.png" />
+    <Content Include="wp-content\themes\michigan\images\curriculum-t2.png" />
+    <Content Include="wp-content\themes\michigan\images\curriculum-t3.png" />
+    <Content Include="wp-content\themes\michigan\images\curriculum-t4.png" />
+    <Content Include="wp-content\themes\michigan\images\curriculum-t5.png" />
+    <Content Include="wp-content\themes\michigan\images\curriculum-t6.png" />
+    <Content Include="wp-content\themes\michigan\images\curriculum-t7.png" />
+    <Content Include="wp-content\themes\michigan\images\curriculum-t8.png" />
+    <Content Include="wp-content\themes\michigan\images\dividerline1.png" />
+    <Content Include="wp-content\themes\michigan\images\dividerline2.png" />
+    <Content Include="wp-content\themes\michigan\images\excursion-program-pattern.png" />
+    <Content Include="wp-content\themes\michigan\images\fancybox\blank.gif" />
+    <Content Include="wp-content\themes\michigan\images\fancybox\fancybox_loading%402x.gif" />
+    <Content Include="wp-content\themes\michigan\images\fancybox\fancybox_loading.gif" />
+    <Content Include="wp-content\themes\michigan\images\fancybox\fancybox_overlay.png" />
+    <Content Include="wp-content\themes\michigan\images\fancybox\fancybox_sprite%402x.png" />
+    <Content Include="wp-content\themes\michigan\images\fancybox\fancybox_sprite.png" />
+    <Content Include="wp-content\themes\michigan\images\favicon.ico" />
+    <Content Include="wp-content\themes\michigan\images\filter-courses-empty.png" />
+    <Content Include="wp-content\themes\michigan\images\find-ico1.png" />
+    <Content Include="wp-content\themes\michigan\images\green.png" />
+    <Content Include="wp-content\themes\michigan\images\li-arrow.png" />
+    <Content Include="wp-content\themes\michigan\images\li-arrow2.png" />
+    <Content Include="wp-content\themes\michigan\images\li-check.png" />
+    <Content Include="wp-content\themes\michigan\images\li-circle.png" />
+    <Content Include="wp-content\themes\michigan\images\li-cross.png" />
+    <Content Include="wp-content\themes\michigan\images\li-minus.png" />
+    <Content Include="wp-content\themes\michigan\images\li-plus.png" />
+    <Content Include="wp-content\themes\michigan\images\li-square.png" />
+    <Content Include="wp-content\themes\michigan\images\li-star.png" />
+    <Content Include="wp-content\themes\michigan\images\lightblue.png" />
+    <Content Include="wp-content\themes\michigan\images\list-events1.jpg" />
+    <Content Include="wp-content\themes\michigan\images\loading.gif" />
+    <Content Include="wp-content\themes\michigan\images\map.html" />
+    <Content Include="wp-content\themes\michigan\images\max-title-border.png" />
+    <Content Include="wp-content\themes\michigan\images\orange.png" />
+    <Content Include="wp-content\themes\michigan\images\pattern-bg2.png" />
+    <Content Include="wp-content\themes\michigan\images\pattern.png" />
+    <Content Include="wp-content\themes\michigan\images\pattern2.png" />
+    <Content Include="wp-content\themes\michigan\images\pattern3.png" />
+    <Content Include="wp-content\themes\michigan\images\ring.gif" />
+    <Content Include="wp-content\themes\michigan\images\search-icon.png" />
+    <Content Include="wp-content\themes\michigan\images\search.jpg" />
+    <Content Include="wp-content\themes\michigan\images\sf_loading.gif" />
+    <Content Include="wp-content\themes\michigan\images\sf_search.png" />
+    <Content Include="wp-content\themes\michigan\images\spattern.png" />
+    <Content Include="wp-content\themes\michigan\images\stars\rating_half.png" />
+    <Content Include="wp-content\themes\michigan\images\stars\rating_off.png" />
+    <Content Include="wp-content\themes\michigan\images\stars\rating_on.png" />
+    <Content Include="wp-content\themes\michigan\images\style-selector-img\college-thumb.jpg" />
+    <Content Include="wp-content\themes\michigan\images\style-selector-img\college.jpg" />
+    <Content Include="wp-content\themes\michigan\images\style-selector-img\michigan-thumb.jpg" />
+    <Content Include="wp-content\themes\michigan\images\style-selector-img\michigan.jpg" />
+    <Content Include="wp-content\themes\michigan\images\style-selector-img\online-thumb.jpg" />
+    <Content Include="wp-content\themes\michigan\images\style-selector-img\online.jpg" />
+    <Content Include="wp-content\themes\michigan\images\style-selector-img\school-thumb.jpg" />
+    <Content Include="wp-content\themes\michigan\images\style-selector-img\school.jpg" />
+    <Content Include="wp-content\themes\michigan\images\style-selector-img\sprite.png" />
+    <Content Include="wp-content\themes\michigan\images\subtitle-border.png" />
+    <Content Include="wp-content\themes\michigan\images\timetable\chicken.jpg" />
+    <Content Include="wp-content\themes\michigan\images\timetable\fish.jpg" />
+    <Content Include="wp-content\themes\michigan\images\timetable\food-menu-bg.jpg" />
+    <Content Include="wp-content\themes\michigan\images\timetable\foot-table-icon01.png" />
+    <Content Include="wp-content\themes\michigan\images\timetable\foot-table-icon02.png" />
+    <Content Include="wp-content\themes\michigan\images\timetable\foot-table-icon03.png" />
+    <Content Include="wp-content\themes\michigan\images\timetable\fruit.jpg" />
+    <Content Include="wp-content\themes\michigan\images\timetable\pizza.jpg" />
+    <Content Include="wp-content\themes\michigan\images\timetable\sandwich.jpg" />
+    <Content Include="wp-content\themes\michigan\images\v-shadow-left.png" />
+    <Content Include="wp-content\themes\michigan\images\v-shadow-right.png" />
+    <Content Include="wp-content\themes\michigan\images\w-divider8-icon-img.png" />
+    <Content Include="wp-content\themes\michigan\images\woobag%402x.png" />
+    <Content Include="wp-content\themes\michigan\images\world-map.png" />
+    <Content Include="wp-content\themes\michigan\images\world-map2.png" />
+    <Content Include="wp-content\themes\michigan\inc\plugins\woocommerce\fonts\star.svg" />
+    <Content Include="wp-content\themes\michigan\inc\plugins\woocommerce\images\ajax-loader%402x.gif" />
+    <Content Include="wp-content\themes\michigan\inc\plugins\woocommerce\images\ajax-loader.gif" />
+    <Content Include="wp-content\themes\michigan\inc\plugins\woocommerce\images\cross_white.png" />
+    <Content Include="wp-content\themes\michigan\inc\plugins\woocommerce\images\icons\invalid%402x.html" />
+    <Content Include="wp-content\themes\michigan\inc\plugins\woocommerce\images\icons\invalid.html" />
+    <Content Include="wp-content\themes\michigan\inc\plugins\woocommerce\images\icons\valid%402x.html" />
+    <Content Include="wp-content\themes\michigan\inc\plugins\woocommerce\images\icons\valid.html" />
+    <Content Include="wp-content\themes\michigan\inc\plugins\woocommerce\images\select-arrow.png" />
+    <Content Include="wp-content\themes\michigan\inc\plugins\woocommerce\images\star%402x.png" />
+    <Content Include="wp-content\themes\michigan\inc\plugins\woocommerce\images\star.png" />
+    <Content Include="wp-content\themes\michigan\inc\plugins\woocommerce\woocommerce.css" />
+    <Content Include="wp-content\themes\michigan\js\colorize.js" />
+    <Content Include="wp-content\themes\michigan\js\jquery.masonry.min.js" />
+    <Content Include="wp-content\themes\michigan\js\jquery.plugins.js" />
+    <Content Include="wp-content\themes\michigan\js\live-search.js" />
+    <Content Include="wp-content\themes\michigan\js\webnus-custom.js" />
+    <Content Include="wp-content\uploads\2016\02\event2-1.jpg" />
+    <Content Include="wp-content\uploads\2016\02\event3-1-460x410.jpg" />
+    <Content Include="wp-content\uploads\2016\02\event3-1-690x410.jpg" />
+    <Content Include="wp-content\uploads\2016\02\event3-1-720x388.jpg" />
+    <Content Include="wp-content\uploads\2016\02\event4-1-720x388.jpg" />
+    <Content Include="wp-content\uploads\2016\02\event5-1-164x124.jpg" />
+    <Content Include="wp-content\uploads\2016\02\event5-1-420x280.jpg" />
+    <Content Include="wp-content\uploads\2016\02\event5-1-420x330.jpg" />
+    <Content Include="wp-content\uploads\2016\02\event5-1-460x410.jpg" />
+    <Content Include="wp-content\uploads\2016\02\event5-1-720x388.jpg" />
+    <Content Include="wp-content\uploads\2016\02\event5-1.jpg" />
+    <Content Include="wp-content\uploads\2016\02\event6-1-164x124.jpg" />
+    <Content Include="wp-content\uploads\2016\02\event6-1-420x280.jpg" />
+    <Content Include="wp-content\uploads\2016\02\event6-1-420x330.jpg" />
+    <Content Include="wp-content\uploads\2016\02\event6-1-460x410.jpg" />
+    <Content Include="wp-content\uploads\2016\02\event6-1-720x388.jpg" />
+    <Content Include="wp-content\uploads\2016\02\event6-1.jpg" />
+    <Content Include="wp-content\uploads\2016\02\event7-1-164x124.jpg" />
+    <Content Include="wp-content\uploads\2016\02\event7-1-420x330.jpg" />
+    <Content Include="wp-content\uploads\2016\02\event7-1-460x410.jpg" />
+    <Content Include="wp-content\uploads\2016\02\event7-1-720x388.jpg" />
+    <Content Include="wp-content\uploads\2016\02\event7-1.jpg" />
+    <Content Include="wp-content\uploads\2016\02\event8-1-164x124.jpg" />
+    <Content Include="wp-content\uploads\2016\02\event8-1-420x280.jpg" />
+    <Content Include="wp-content\uploads\2016\02\event8-1-420x330.jpg" />
+    <Content Include="wp-content\uploads\2016\02\event8-1-460x410.jpg" />
+    <Content Include="wp-content\uploads\2016\02\event8-1-690x410.jpg" />
+    <Content Include="wp-content\uploads\2016\02\event8-1-720x388.jpg" />
+    <Content Include="wp-content\uploads\2016\02\event8-1.jpg" />
+    <Content Include="wp-content\uploads\2016\02\event9-1-460x410.jpg" />
+    <Content Include="wp-content\uploads\2016\02\event9-1-690x410.jpg" />
+    <Content Include="wp-content\uploads\2016\02\event9-1-720x388.jpg" />
+    <Content Include="wp-content\uploads\2016\02\shutterstock_200555816-1-164x124.jpg" />
+    <Content Include="wp-content\uploads\2016\02\shutterstock_200555816-1-420x330.jpg" />
+    <Content Include="wp-content\uploads\2016\03\1-1.png" />
+    <Content Include="wp-content\uploads\2016\03\2-1.png" />
+    <Content Include="wp-content\uploads\2016\03\3-1.png" />
+    <Content Include="wp-content\uploads\2016\03\4-1.png" />
+    <Content Include="wp-content\uploads\2016\03\blogimg01-1-164x124.jpg" />
+    <Content Include="wp-content\uploads\2016\03\blogimg01-1-420x280.jpg" />
+    <Content Include="wp-content\uploads\2016\03\blogimg01-1-420x330.jpg" />
+    <Content Include="wp-content\uploads\2016\03\blogimg01-1-460x434.jpg" />
+    <Content Include="wp-content\uploads\2016\03\blogimg01-1.jpg" />
+    <Content Include="wp-content\uploads\2016\03\blogitp08.jpg" />
+    <Content Include="wp-content\uploads\2016\03\blx-d-n02-1.jpg" />
+    <Content Include="wp-content\uploads\2016\03\blx04-1.jpg" />
+    <Content Include="wp-content\uploads\2016\03\blx05-1.jpg" />
+    <Content Include="wp-content\uploads\2016\03\blx06-1.jpg" />
+    <Content Include="wp-content\uploads\2016\03\blx08-1.jpg" />
+    <Content Include="wp-content\uploads\2016\03\blx09-1.jpg" />
+    <Content Include="wp-content\uploads\2016\03\home-pic22439.jpg" />
+    <Content Include="wp-content\uploads\2016\03\Home1-v6-1-1.jpg" />
+    <Content Include="wp-content\uploads\2016\03\iame-1.png" />
+    <Content Include="wp-content\uploads\2016\03\media-1.png" />
+    <Content Include="wp-content\uploads\2016\03\onl-p-x1-1.jpg" />
+    <Content Include="wp-content\uploads\2016\03\ourclient-5-1.png" />
+    <Content Include="wp-content\uploads\2016\03\ourclient-6-1-1.png" />
+    <Content Include="wp-content\uploads\2016\03\ourclient-7-1.png" />
+    <Content Include="wp-content\uploads\2016\03\ourclient-8-1.png" />
+    <Content Include="wp-content\uploads\2016\03\Pricing-Online-Learning-1.jpg" />
+    <Content Include="wp-content\uploads\2016\03\qman1-1.jpg" />
+    <Content Include="wp-content\uploads\2016\03\testimonial2-1.jpg" />
+    <Content Include="wp-content\uploads\2016\03\trang-1.png" />
+    <Content Include="wp-content\uploads\2016\03\we-1.png" />
+    <Content Include="wp-content\uploads\2016\04\logo-onlinelearning-footer.png" />
+    <Content Include="wp-content\uploads\2016\04\logo-onlinelearning1.png" />
+    <Content Include="wp-content\uploads\2016\05\analytics.png" />
+    <Content Include="wp-content\uploads\2016\05\blox-02-03.jpg" />
+    <Content Include="wp-content\uploads\2016\05\blox0202.jpg" />
+    <Content Include="wp-content\uploads\2016\05\coupons.png" />
+    <Content Include="wp-content\uploads\2016\05\course01-420x330.jpg" />
+    <Content Include="wp-content\uploads\2016\05\course01-720x388.jpg" />
+    <Content Include="wp-content\uploads\2016\05\course01.jpg" />
+    <Content Include="wp-content\uploads\2016\05\course06-420x330.jpg" />
+    <Content Include="wp-content\uploads\2016\05\course06-720x388.jpg" />
+    <Content Include="wp-content\uploads\2016\05\course07-01-1-420x280.jpg" />
+    <Content Include="wp-content\uploads\2016\05\course07-01-1-420x330.jpg" />
+    <Content Include="wp-content\uploads\2016\05\course07-01-1-720x388.jpg" />
+    <Content Include="wp-content\uploads\2016\05\course07.jpg" />
+    <Content Include="wp-content\uploads\2016\05\course09-1-420x330.jpg" />
+    <Content Include="wp-content\uploads\2016\05\course09-1-720x388.jpg" />
+    <Content Include="wp-content\uploads\2016\05\course10-420x330.jpg" />
+    <Content Include="wp-content\uploads\2016\05\course10-720x388.jpg" />
+    <Content Include="wp-content\uploads\2016\05\course10.jpg" />
+    <Content Include="wp-content\uploads\2016\05\course11-420x280.jpg" />
+    <Content Include="wp-content\uploads\2016\05\course11-420x330.jpg" />
+    <Content Include="wp-content\uploads\2016\05\course11-720x388.jpg" />
+    <Content Include="wp-content\uploads\2016\05\course12-420x280.jpg" />
+    <Content Include="wp-content\uploads\2016\05\course12-420x330.jpg" />
+    <Content Include="wp-content\uploads\2016\05\course12-720x388.jpg" />
+    <Content Include="wp-content\uploads\2016\05\course12.jpg" />
+    <Content Include="wp-content\uploads\2016\05\course13-1-420x280.jpg" />
+    <Content Include="wp-content\uploads\2016\05\course13-1-420x330.jpg" />
+    <Content Include="wp-content\uploads\2016\05\course13-1-720x388.jpg" />
+    <Content Include="wp-content\uploads\2016\05\course13-420x280.jpg" />
+    <Content Include="wp-content\uploads\2016\05\course13-420x330.jpg" />
+    <Content Include="wp-content\uploads\2016\05\course13-720x388.jpg" />
+    <Content Include="wp-content\uploads\2016\05\course13.jpg" />
+    <Content Include="wp-content\uploads\2016\05\crs-p-420x280.jpg" />
+    <Content Include="wp-content\uploads\2016\05\crs-p-420x330.jpg" />
+    <Content Include="wp-content\uploads\2016\05\crs-p-720x388.jpg" />
+    <Content Include="wp-content\uploads\2016\05\crs-p02-420x280.jpg" />
+    <Content Include="wp-content\uploads\2016\05\crs-p02-420x330.jpg" />
+    <Content Include="wp-content\uploads\2016\05\crs-p02-720x388.jpg" />
+    <Content Include="wp-content\uploads\2016\05\crs-p03-420x280.jpg" />
+    <Content Include="wp-content\uploads\2016\05\crs-p03-420x330.jpg" />
+    <Content Include="wp-content\uploads\2016\05\crs-p03-720x388.jpg" />
+    <Content Include="wp-content\uploads\2016\05\drip.png" />
+    <Content Include="wp-content\uploads\2016\05\Edit-Logo.png" />
+    <Content Include="wp-content\uploads\2016\05\feature-1.png" />
+    <Content Include="wp-content\uploads\2016\05\feature-2.png" />
+    <Content Include="wp-content\uploads\2016\05\feature-3.png" />
+    <Content Include="wp-content\uploads\2016\05\feature-4.png" />
+    <Content Include="wp-content\uploads\2016\05\fitness03-2-420x280.jpg" />
+    <Content Include="wp-content\uploads\2016\05\fitness03-2-420x330.jpg" />
+    <Content Include="wp-content\uploads\2016\05\fitness03-2-720x388.jpg" />
+    <Content Include="wp-content\uploads\2016\05\gamification.png" />
+    <Content Include="wp-content\uploads\2016\05\ios-1-420x330.jpg" />
+    <Content Include="wp-content\uploads\2016\05\ios-1-720x388.jpg" />
+    <Content Include="wp-content\uploads\2016\05\ios-1.jpg" />
+    <Content Include="wp-content\uploads\2016\05\lesson01-1-420x330.jpg" />
+    <Content Include="wp-content\uploads\2016\05\lesson01-1-720x388.jpg" />
+    <Content Include="wp-content\uploads\2016\05\lesson01-1.jpg" />
+    <Content Include="wp-content\uploads\2016\05\lesson03-1.jpg" />
+    <Content Include="wp-content\uploads\2016\05\lesson04.jpg" />
+    <Content Include="wp-content\uploads\2016\05\lesson05.jpg" />
+    <Content Include="wp-content\uploads\2016\05\martin-king-3.jpg" />
+    <Content Include="wp-content\uploads\2016\05\mellisa-freeman-3.jpg" />
+    <Content Include="wp-content\uploads\2016\05\membership.png" />
+    <Content Include="wp-content\uploads\2016\05\Michigan_Opacity_25-3.png" />
+    <Content Include="wp-content\uploads\2016\05\music-1-420x330.jpg" />
+    <Content Include="wp-content\uploads\2016\05\music-1-720x388.jpg" />
+    <Content Include="wp-content\uploads\2016\05\music-1.jpg" />
+    <Content Include="wp-content\uploads\2016\05\profile.png" />
+    <Content Include="wp-content\uploads\2016\05\q1-1.jpg" />
+    <Content Include="wp-content\uploads\2016\05\q3-1.jpg" />
+    <Content Include="wp-content\uploads\2016\05\q4-1.jpg" />
+    <Content Include="wp-content\uploads\2016\05\q5-1.jpg" />
+    <Content Include="wp-content\uploads\2016\05\q6-1.jpg" />
+    <Content Include="wp-content\uploads\2016\05\responsive.png" />
+    <Content Include="wp-content\uploads\2016\05\richard-saltman.jpg" />
+    <Content Include="wp-content\uploads\2016\05\sale-1.jpg" />
+    <Content Include="wp-content\uploads\2016\05\sale01-1-420x280.jpg" />
+    <Content Include="wp-content\uploads\2016\05\sale01-1-420x330.jpg" />
+    <Content Include="wp-content\uploads\2016\05\sale01-1-720x388.jpg" />
+    <Content Include="wp-content\uploads\2016\05\sidebars.png" />
+    <Content Include="wp-content\uploads\2016\05\simple.png" />
+    <Content Include="wp-content\uploads\2016\06\become-an-instructor.png" />
+    <Content Include="wp-content\uploads\2016\06\bg.jpg" />
+    <Content Include="wp-content\uploads\2016\06\client11.png" />
+    <Content Include="wp-content\uploads\2016\06\client21.png" />
+    <Content Include="wp-content\uploads\2016\06\client41.png" />
+    <Content Include="wp-content\uploads\2016\06\client51.png" />
+    <Content Include="wp-content\uploads\2016\06\client61.png" />
+    <Content Include="wp-content\uploads\2016\06\client71.png" />
+    <Content Include="wp-content\uploads\2016\06\client81.png" />
+    <Content Include="wp-content\uploads\2016\06\client91.png" />
+    <Content Include="wp-content\uploads\2016\06\course-suggestion1.png" />
+    <Content Include="wp-content\uploads\2016\06\elizabeth-cooper01.jpg" />
+    <Content Include="wp-content\uploads\2016\06\john-doe01.jpg" />
+    <Content Include="wp-content\uploads\2016\06\logo-onlinelearning2.png" />
+    <Content Include="wp-content\uploads\2016\06\sam-winchester01.jpg" />
+    <Content Include="wp-content\uploads\2016\07\app-sbgs11.jpg" />
+    <Content Include="wp-content\uploads\2016\07\blxhub2.jpg" />
+    <Content Include="wp-content\uploads\2016\07\blxhub4.jpg" />
+    <Content Include="wp-content\uploads\2016\07\blxonec.jpg" />
+    <Content Include="wp-content\uploads\2016\07\hubcrst1.jpg" />
+    <Content Include="wp-content\uploads\2016\07\hubcrst2.jpg" />
+    <Content Include="wp-content\uploads\2016\07\hubcrst3.jpg" />
+    <Content Include="wp-content\uploads\2016\07\hubcrst4.jpg" />
+    <Content Include="wp-content\uploads\2016\07\hubcrst5.jpg" />
+    <Content Include="wp-content\uploads\2016\07\insp1.jpg" />
+    <Content Include="wp-content\uploads\2016\07\oneinsp1.jpg" />
+    <Content Include="wp-content\uploads\2016\07\tc-manq-1.jpg" />
+    <Content Include="wp-content\uploads\2016\07\tc-manq-2.jpg" />
+    <Content Include="wp-content\uploads\2016\07\tc-manq-3.jpg" />
+    <Content Include="wp-content\uploads\2016\07\tc-manq-4.jpg" />
+    <Content Include="wp-content\uploads\2016\07\tc-manq-5.jpg" />
+    <Content Include="wp-content\uploads\2016\08\app-sbgs9.jpg" />
+    <Content Include="wp-content\uploads\2016\08\new-slider-p1.jpg" />
+    <Content Include="wp-content\uploads\2016\08\new-slider-p4.jpg" />
+    <Content Include="wp-content\uploads\2016\08\new-slider-p5.jpg" />
+    <Content Include="wp-content\uploads\2016\08\new-slider-p7.jpg" />
+    <Content Include="wp-content\uploads\2016\08\new-slider-p8.jpg" />
+    <Content Include="wp-content\uploads\2016\08\npic0996b62.jpg" />
+    <Content Include="wp-content\uploads\avatars\10\57a0645b08d0c-bpfull.jpg" />
+    <Content Include="wp-content\uploads\avatars\10\57a0645b0fc11-bpthumb.jpg" />
+    <Content Include="wp-content\uploads\avatars\12\57a06441cee79-bpfull.jpg" />
+    <Content Include="wp-content\uploads\avatars\12\57a06441d624f-bpthumb.jpg" />
+    <Content Include="wp-content\uploads\avatars\13\57a06426e3a37-bpfull.jpg" />
+    <Content Include="wp-content\uploads\avatars\13\57a06427015b3-bpthumb.jpg" />
+    <Content Include="wp-content\uploads\avatars\2\57a064b9c50db-bpfull.jpg" />
+    <Content Include="wp-content\uploads\avatars\2\57a064b9cf1cd-bpthumb.jpg" />
+    <Content Include="wp-content\uploads\avatars\4\57a064c0a9841-bpfull.jpg" />
+    <Content Include="wp-content\uploads\avatars\4\57a064c0b3c56-bpthumb.jpg" />
+    <Content Include="wp-content\uploads\avatars\5\57a064cc6981e-bpfull.jpg" />
+    <Content Include="wp-content\uploads\avatars\5\57a064cc6f1ed-bpthumb.jpg" />
+    <Content Include="wp-content\uploads\avatars\6\5756b8c14d501-bpfull.jpg" />
+    <Content Include="wp-content\uploads\avatars\6\5756b8c152401-bpthumb.jpg" />
+    <Content Include="wp-content\uploads\avatars\7\57a06a05297c5-bpfull.jpg" />
+    <Content Include="wp-content\uploads\avatars\7\57a06a052fafe-bpthumb.jpg" />
+    <Content Include="wp-content\uploads\avatars\8\57a069fa824ea-bpfull.jpg" />
+    <Content Include="wp-content\uploads\avatars\8\57a069fa93fb6-bpthumb.jpg" />
+    <Content Include="wp-content\uploads\avatars\9\57a069f1e6532-bpfull.jpg" />
+    <Content Include="wp-content\uploads\avatars\9\57a069f1f11f9-bpthumb.jpg" />
+    <Content Include="wp-content\uploads\buddypress\groups\2\cover-image\5757d894eda4c-bp-cover-image.jpg" />
+    <Content Include="wp-content\uploads\buddypress\groups\3\cover-image\5757edab6566d-bp-cover-image.jpg" />
+    <Content Include="wp-content\uploads\buddypress\groups\4\cover-image\5757fd989ac6c-bp-cover-image.jpg" />
+    <Content Include="wp-content\uploads\buddypress\members\12\cover-image\57625183c361d-bp-cover-image.jpg" />
+    <Content Include="wp-content\uploads\group-avatars\2\5757fc2f88997-bpfull.jpg" />
+    <Content Include="wp-content\uploads\group-avatars\2\5757fc2f8fec9-bpthumb.jpg" />
+    <Content Include="wp-content\uploads\group-avatars\3\5757fd222b413-bpfull.jpg" />
+    <Content Include="wp-content\uploads\group-avatars\3\5757fd2231a0b-bpthumb.jpg" />
+    <Content Include="wp-content\uploads\group-avatars\4\5757fd1c11d11-bpfull.jpg" />
+    <Content Include="wp-content\uploads\group-avatars\4\5757fd1c16466-bpthumb.jpg" />
+    <Content Include="wp-content\uploads\revslider\Home-2-slider\slider-pe1v2.jpg" />
+    <Content Include="wp-content\uploads\revslider\Home-2-slider\slider-pe2.jpg" />
+    <Content Include="wp-content\uploads\revslider\Home-2-slider\slider-pe3.jpg" />
+    <Content Include="wp-includes\js\comment-reply.min341d.js" />
+    <Content Include="wp-includes\js\heartbeat.min341d.js" />
+    <Content Include="wp-includes\js\jquery\jquery-migrate.min330a.js" />
+    <Content Include="wp-includes\js\jquery\jqueryb8ff.js" />
+    <Content Include="wp-includes\js\jquery\ui\core.mine899.js" />
+    <Content Include="wp-includes\js\jquery\ui\datepicker.mine899.js" />
+    <Content Include="wp-includes\js\jquery\ui\mouse.mine899.js" />
+    <Content Include="wp-includes\js\jquery\ui\position.mine899.js" />
+    <Content Include="wp-includes\js\jquery\ui\slider.mine899.js" />
+    <Content Include="wp-includes\js\jquery\ui\tabs.mine899.js" />
+    <Content Include="wp-includes\js\jquery\ui\tooltip.mine899.js" />
+    <Content Include="wp-includes\js\jquery\ui\widget.mine899.js" />
+    <Content Include="wp-includes\js\mediaelement\background.png" />
+    <Content Include="wp-includes\js\mediaelement\bigplay.png" />
+    <Content Include="wp-includes\js\mediaelement\controls.png" />
+    <Content Include="wp-includes\js\mediaelement\jumpforward.png" />
+    <Content Include="wp-includes\js\mediaelement\loading.gif" />
+    <Content Include="wp-includes\js\mediaelement\mediaelement-and-player.min51cd.js" />
+    <Content Include="wp-includes\js\mediaelement\mediaelementplayer.min51cd.css" />
+    <Content Include="wp-includes\js\mediaelement\skipback.png" />
+    <Content Include="wp-includes\js\mediaelement\wp-mediaelement.min341d.css" />
+    <Content Include="wp-includes\js\mediaelement\wp-mediaelement.min341d.js" />
+    <Content Include="wp-includes\js\wp-embed.min341d.js" />
+    <Content Include="wp-includes\js\zxcvbn-async.min5152.js" />
+    <Content Include="wp-includes\wlwmanifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <None Include="packages.config" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\_HomeLessons.cshtml" />
+    <Content Include="Views\Home\_HomeEducation.cshtml" />
+    <Content Include="Views\Home\_HomePrivilege.cshtml" />
+    <Content Include="Views\Home\_HomeEducator.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_Navbar.cshtml" />
+    <Content Include="Views\Shared\_TopFooter.cshtml" />
+    <Content Include="Views\Shared\_MenuBar.cshtml" />
+    <Content Include="Views\Home\_HomeSector.cshtml" />
+    <Content Include="Views\Home\_HomePopularEducation.cshtml" />
+    <Content Include="Views\Shared\_WorkPartners.cshtml" />
+    <Content Include="Views\Home\_HomeStatistics.cshtml" />
+    <Content Include="Views\Home\Lokasyon.cshtml" />
+    <Content Include="Views\Shared\_GoogleMaps.cshtml" />
+    <Content Include="Views\Home\blog.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="wp-admin\images\wordpress-logo7d6b.svg.tmp" />
+    <Content Include="wp-content\plugins\essential-grid\public\assets\font\egfontdde9.eot" />
+    <Content Include="wp-content\plugins\essential-grid\public\assets\font\egfontdde9.ttf" />
+    <Content Include="wp-content\plugins\essential-grid\public\assets\font\egfontdde9.woff" />
+    <Content Include="wp-content\plugins\js_composer\assets\fonts\vc_grid\vc_grid_v157a1.eot" />
+    <Content Include="wp-content\plugins\js_composer\assets\fonts\vc_grid\vc_grid_v157a1.ttf" />
+    <Content Include="wp-content\plugins\js_composer\assets\fonts\vc_grid\vc_grid_v157a1.woff" />
+    <Content Include="wp-content\plugins\js_composer\assets\fonts\vc_grid\vc_grid_v1d41d.eot" />
+    <Content Include="wp-content\plugins\lifterlms\assets\fonts\fontawesome\fontawesome-webfont78ce.eot" />
+    <Content Include="wp-content\plugins\lifterlms\assets\fonts\fontawesome\fontawesome-webfont78ce.ttf" />
+    <Content Include="wp-content\plugins\lifterlms\assets\fonts\fontawesome\fontawesome-webfont78ce.woff" />
+    <Content Include="wp-content\plugins\lifterlms\assets\fonts\fontawesome\fontawesome-webfontd41d.eot" />
+    <Content Include="wp-content\plugins\revslider\public\assets\fonts\revicons\revicons90c6.eot" />
+    <Content Include="wp-content\plugins\revslider\public\assets\fonts\revicons\revicons90c6.ttf" />
+    <Content Include="wp-content\plugins\revslider\public\assets\fonts\revicons\revicons90c6.woff" />
+    <Content Include="wp-content\plugins\the-events-calendar\src\resources\vendor\select2\select2x2.html.tmp" />
+    <Content Include="wp-content\themes\michigan\fonts\et-line.eot" />
+    <Content Include="wp-content\themes\michigan\fonts\et-line.ttf" />
+    <Content Include="wp-content\themes\michigan\fonts\et-line.woff" />
+    <Content Include="wp-content\themes\michigan\fonts\et-lined41d.eot" />
+    <Content Include="wp-content\themes\michigan\fonts\fontawesome-webfont78ce.eot" />
+    <Content Include="wp-content\themes\michigan\fonts\fontawesome-webfont78ce.ttf" />
+    <Content Include="wp-content\themes\michigan\fonts\fontawesome-webfont78ce.woff" />
+    <Content Include="wp-content\themes\michigan\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="wp-content\themes\michigan\fonts\linecons.eot" />
+    <Content Include="wp-content\themes\michigan\fonts\linecons.ttf" />
+    <Content Include="wp-content\themes\michigan\fonts\linecons.woff" />
+    <Content Include="wp-content\themes\michigan\fonts\lineconsd41d.eot" />
+    <Content Include="wp-content\themes\michigan\fonts\Pe-icon-7-strokebb1d.eot" />
+    <Content Include="wp-content\themes\michigan\fonts\Pe-icon-7-strokebb1d.ttf" />
+    <Content Include="wp-content\themes\michigan\fonts\Pe-icon-7-strokebb1d.woff" />
+    <Content Include="wp-content\themes\michigan\fonts\Pe-icon-7-stroked41d.eot" />
+    <Content Include="wp-content\themes\michigan\fonts\Simple-Line-Iconsb26c.eot" />
+    <Content Include="wp-content\themes\michigan\fonts\Simple-Line-Iconsb26c.ttf" />
+    <Content Include="wp-content\themes\michigan\fonts\Simple-Line-Iconsb26c.woff" />
+    <Content Include="wp-content\themes\michigan\fonts\Simple-Line-Iconsb26c.woff2" />
+    <Content Include="wp-content\themes\michigan\fonts\themify9f24.eot" />
+    <Content Include="wp-content\themes\michigan\fonts\themify9f24.ttf" />
+    <Content Include="wp-content\themes\michigan\fonts\themify9f24.woff" />
+    <Content Include="wp-content\themes\michigan\fonts\themifyd41d.eot" />
+    <Content Include="wp-content\themes\michigan\inc\plugins\woocommerce\fonts\star.eot" />
+    <Content Include="wp-content\themes\michigan\inc\plugins\woocommerce\fonts\star.ttf" />
+    <Content Include="wp-content\themes\michigan\inc\plugins\woocommerce\fonts\star.woff" />
+    <Content Include="wp-content\themes\michigan\inc\plugins\woocommerce\fonts\stard41d.eot" />
+    <Content Include="wp-content\uploads\avatars\6\5756b8c152401-bpthumb.jpg.tmp" />
+    <Content Include="wp-includes\fonts\dashicons.eot" />
+    <Content Include="wp-includes\js\mediaelement\bigplay.svg.tmp" />
+    <Content Include="wp-includes\js\mediaelement\controls.svg.tmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63998</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:63998/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

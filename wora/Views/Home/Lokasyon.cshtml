@@ -1,0 +1,365 @@
+﻿
+@{
+    ViewBag.Title = "Lokasyon";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style type="text/css">
+
+    #map {
+        height: 400px;
+        width: 100%;
+    }
+    .container > h5{
+        margin:40px 50px 40px 40px;
+        text-align:center;
+    }
+</style>
+
+
+<section id="headline" style="margin-top:auto">
+    <div class="container">
+        <h2 style=""> LOKASYONLAR</h2>
+    </div>
+</section>
+
+<div class="container">
+    <h5>SİZE EN YAKIN LOKASYONDA KURUMSAL VE BİREYSEL EĞİTİMLERE KATILABİLİRSİNİZ</h5>
+    <div id="map"></div>
+</div>
+
+
+
+<br />
+<br />
+
+<br />
+
+
+
+
+
+
+@*<section id="main-content" class="container">
+        <!-- Start Page Content -->
+        <div class="row-wrapper-x">
+            <section class="wpb_row  ">
+                <div class="wpb_column vc_column_container vc_col-sm-12">
+                    <div class="vc_column-inner ">
+                        <div class="wpb_wrapper">
+                            <div class="wpb_text_column wpb_content_element ">
+                                <div class="wpb_wrapper">
+                                    <h5 style="text-align: center;">SİZE EN YAKIN LOKASYONDA KURUMSAL VE BİREYSEL EĞİTİMLERE KATILABİLİRSİNİZ</h5>
+
+                                </div>
+                            </div>
+
+                            <div class="wpb_text_column wpb_content_element ">
+                                <div class="wpb_wrapper">
+                                    <script type="text/javascript">
+                                        jQuery(document).ready(function ($) {
+                                            // the div that will contain the map
+                                            var mapdiv = jQuery("#responsive_map_605722511");
+                                            // markers should be clustered?
+                                            var clustering = "no";
+                                            // Create the map in the div
+                                            mapdiv.gMapResp({
+                                                maptype: google.maps.MapTypeId.ROADMAP,
+                                                log: false,
+                                                zoom: 11,
+                                                markers: [{
+                                                    latitude: 41.0768114,
+                                                    longitude: 29.0270342,
+                                                    key: '1', html: 'Akmerkez<br>Kültür Mah. Ahmet Adnan Saygun Cad. Ak Merkez Giriş Kat Beşiktaş İstanbul Türkiye',
+                                                    popup: false,
+                                                    flat: true,
+                                                    icon: {
+                                                        image: 'http://www.wora.com.tr/wp-content/plugins/responsive-maps-plugin/includes/icons/blue.png'
+                                                    }
+                                                }, {
+                                                    latitude: 41.1083742,
+                                                    longitude: 29.0161321,
+                                                    key: '2', html: 'Park Plaza<br>Reşitpaşa Mah. Eski Büyük Dere Cad. Park Plaza Giriş Kat Sarıyer İstanbul Türkiye',
+                                                    popup: false,
+                                                    flat: true,
+                                                    icon: {
+                                                        image: 'http://www.wora.com.tr/wp-content/plugins/responsive-maps-plugin/includes/icons/blue.png'
+                                                    }
+                                                }, {
+                                                    latitude: 40.9660078,
+                                                    longitude: 28.7952733,
+                                                    key: '3', html: 'Aqua Florya<br>Şenlikköy Mah. Yeşilköy Halkalı Cad. Aqua Florya Kat:3 No:2 Bakırköy İstanbul Türkiye',
+                                                    popup: false,
+                                                    flat: true,
+                                                    icon: {
+                                                        image: 'http://www.wora.com.tr/wp-content/plugins/responsive-maps-plugin/includes/icons/blue.png'
+                                                    }
+                                                }, {
+                                                    latitude: 41.065774,
+                                                    longitude: 28.9981783,
+                                                    key: '4', html: 'Quasar<br>Fulya Mah. Büyükdere Cad. Quasar İstanbul Şişli İstanbul Türkiye',
+                                                    popup: false,
+                                                    flat: true,
+                                                    icon: {
+                                                        image: 'http://www.wora.com.tr/wp-content/plugins/responsive-maps-plugin/includes/icons/blue.png'
+                                                    }
+                                                }, {
+                                                    latitude: 41.008061,
+                                                    longitude: 28.8924993,
+                                                    key: '5', html: 'Merter Platform<br>Abdurrahman Nafiz Gürman Mah. General Ali Rıza Gürcan Cad. Merter Platform B Blok Kat:4 No:45 Güngören İstanbul Türkiye',
+                                                    popup: false,
+                                                    flat: true,
+                                                    icon: {
+                                                        image: 'http://www.wora.com.tr/wp-content/plugins/responsive-maps-plugin/includes/icons/blue.png'
+                                                    }
+                                                }, {
+                                                    latitude: 41.0222996,
+                                                    longitude: 29.0893349,
+                                                    key: '6', html: 'Exen İstanbul<br>Tantavi Mah. Estergon Cad. Exen İstanbul Ofis Kule Kat:11 No:161 Ümraniye İstanbul Türkiye',
+                                                    popup: false,
+                                                    flat: true,
+                                                    icon: {
+                                                        image: 'http://www.wora.com.tr/wp-content/plugins/responsive-maps-plugin/includes/icons/blue.png'
+                                                    }
+                                                }, {
+                                                    latitude: 41.094445,
+                                                    longitude: 29.0884163,
+                                                    key: '7', html: 'Nart Center<br>Kavacık Mah. Ruhi Esmer Sok. Nart Plaza No:1 Kat:4 Beykoz İstanbul Türkiye',
+                                                    popup: false,
+                                                    flat: true,
+                                                    icon: {
+                                                        image: 'http://www.wora.com.tr/wp-content/plugins/responsive-maps-plugin/includes/icons/blue.png'
+                                                    }
+                                                }, {
+                                                    latitude: 41.0288896,
+                                                    longitude: 28.9503785,
+                                                    key: '8', html: 'Villa Fenerion<br>Yavuz Sultan Selim Mah. Dr. Sadık Ahmet Cad. Villa Fenerion No:24 Kat:1 No:1 Fatih İstanbul Türkiye',
+                                                    popup: false,
+                                                    flat: true,
+                                                    icon: {
+                                                        image: 'http://www.wora.com.tr/wp-content/plugins/responsive-maps-plugin/includes/icons/blue.png'
+                                                    }
+                                                }, {
+                                                    latitude: 41.018535,
+                                                    longitude: 28.8252271,
+                                                    key: '9', html: 'Office 11<br>Halkalı Merkez Mah. Basın Ekspres Cad. Office 11 A Blok Giriş Kat No:1 Küçükçekmece İstanbul Türkiye',
+                                                    popup: false,
+                                                    flat: true,
+                                                    icon: {
+                                                        image: 'http://www.wora.com.tr/wp-content/plugins/responsive-maps-plugin/includes/icons/blue.png'
+                                                    }
+                                                }, {
+                                                    latitude: 41.0075283,
+                                                    longitude: 28.6586485,
+                                                    key: '10', html: 'Skyport<br>Yakuplu Mah. Hürriyet Bulvarı Skyport Kat:3 Beylikdüzü İstanbul Türkiye',
+                                                    popup: false,
+                                                    flat: true,
+                                                    icon: {
+                                                        image: 'http://www.wora.com.tr/wp-content/plugins/responsive-maps-plugin/includes/icons/blue.png'
+                                                    }
+                                                }, {
+                                                    latitude: 41.063272,
+                                                    longitude: 28.8051438,
+                                                    key: '11', html: 'Mall of İstanbul<br>Ziya Gökalp Mah. Süleyman Demirel Bulvarı Mall Off İstanbul Kat:17 Başakşehir İstanbul Türkiye',
+                                                    popup: false,
+                                                    flat: true,
+                                                    icon: {
+                                                        image: 'http://www.wora.com.tr/wp-content/plugins/responsive-maps-plugin/includes/icons/blue.png'
+                                                    }
+                                                }, {
+                                                    latitude: 41.0786839,
+                                                    longitude: 29.0080918,
+                                                    key: '12', html: 'Pol Center Plaza<br>Esentepe Mah. Ecza Sok. Pol Center Şişli İstanbul Türkiye',
+                                                    popup: false,
+                                                    flat: true,
+                                                    icon: {
+                                                        image: 'http://www.wora.com.tr/wp-content/plugins/responsive-maps-plugin/includes/icons/blue.png'
+                                                    }
+                                                }, {
+                                                    latitude: 41.0038107,
+                                                    longitude: 29.054674,
+                                                    key: '13', html: 'Akasya Tower Residence<br>Acıbadem Mah. Çeçen Sok. Akasya Residence A Kule Kat:26 No:149 Üsküdar İstanbul Türkiye',
+                                                    popup: false,
+                                                    flat: true,
+                                                    icon: {
+                                                        image: 'http://www.wora.com.tr/wp-content/plugins/responsive-maps-plugin/includes/icons/blue.png'
+                                                    }
+                                                }, {
+                                                    latitude: 41.0685925,
+                                                    longitude: 29.0087184,
+                                                    key: '14', html: 'Oyal İş Merkezi<br>Esentepe Mah. Büyükdere Cad. Oyal İş Merkezi Kat:9 Şişli İstanbul Türkiye',
+                                                    popup: false,
+                                                    flat: true,
+                                                    icon: {
+                                                        image: 'http://www.wora.com.tr/wp-content/plugins/responsive-maps-plugin/includes/icons/blue.png'
+                                                    }
+                                                }, {
+                                                    latitude: 41.1099949,
+                                                    longitude: 29.0183804,
+                                                    key: '15', html: 'Beybi Giz<br>Maslak Mah. Maslak Meydan Sok. Beybi Giz Plaza Kat:15 Sarıyer İstanbul Türkiye',
+                                                    popup: false,
+                                                    flat: true,
+                                                    icon: {
+                                                        image: 'http://www.wora.com.tr/wp-content/plugins/responsive-maps-plugin/includes/icons/blue.png'
+                                                    }
+                                                }, {
+                                                    latitude: 40.9870639,
+                                                    longitude: 28.8305176,
+                                                    key: '16', html: 'EGS Business Park<br>Yeşilköy Mah. Atatürk Cad. EGS Business Park B2 Blok Giriş Kat No:1 Bakırköy İstanbul Türkiye',
+                                                    popup: false,
+                                                    flat: true,
+                                                    icon: {
+                                                        image: 'http://www.wora.com.tr/wp-content/plugins/responsive-maps-plugin/includes/icons/blue.png'
+                                                    }
+                                                }, {
+                                                    latitude: 41.0326172,
+                                                    longitude: 28.9740712,
+                                                    key: '17', html: 'Elhamra İş Hanı<br>Asmalı Mescit Mah. İstiklal Cad. Elhamra İş Hanı Kat:2 Beyoğlu İstanbul Türkiye',
+                                                    popup: false,
+                                                    flat: true,
+                                                    icon: {
+                                                        image: 'http://www.wora.com.tr/wp-content/plugins/responsive-maps-plugin/includes/icons/blue.png'
+                                                    }
+                                                }, {
+                                                    latitude: 40.9112342,
+                                                    longitude: 29.1788311,
+                                                    key: '18', html: 'Hukukçular Towers<br>Cevizli Mah. Mustafa Kemal Cad. Hukukçular Towers A Blok Kat:18 Kartal İstanbul Türkiye',
+                                                    popup: false,
+                                                    flat: true,
+                                                    icon: {
+                                                        image: 'http://www.wora.com.tr/wp-content/plugins/responsive-maps-plugin/includes/icons/blue.png'
+                                                    }
+                                                }, {
+                                                    latitude: 40.9808935,
+                                                    longitude: 29.1009687,
+                                                    key: '19', html: 'Flora Suite Office<br>Küçükbakkalköy Mah. Vedat Günyol Cad. Flora Residence Kat:28 No:2803 Ataşehir İstanbul Türkiye',
+                                                    popup: false,
+                                                    flat: true,
+                                                    icon: {
+                                                        image: 'http://www.wora.com.tr/wp-content/plugins/responsive-maps-plugin/includes/icons/blue.png'
+                                                    }
+                                                }],
+                                                panControl: false,
+                                                zoomControl: true,
+                                                draggable: true,
+                                                scrollwheel: true,
+                                                mapTypeControl: false,
+                                                scaleControl: false,
+                                                streetViewControl: false,
+                                                overviewMapControl: true,
+                                                styles: [{ "stylers": [{ "featureType": "all" }, { "saturation": -100 }, { "gamma": 0.50 }, { "lightness": 30 }] }],
+                                                latitude: null,
+                                                longitude: null,
+                                                onComplete: function () {
+                                                    var gmap = mapdiv.data('gmap').gmap;
+                                                    if (clustering.length != 0 && clustering == "yes") {
+                                                        var markerCluster = new MarkerClusterer(gmap, mapdiv.data('gmap').markers, { imagePath: 'http://www.wora.com.tr/wp-content/plugins/responsive-maps-plugin/includes/img/m' });
+                                                    }
+                                                }
+                                            });
+                                            gmap = mapdiv.data('gmap').gmap;
+                                            resmap_fixDisplayInTabs(mapdiv, false);
+                                        });
+                                        window.onresize = function () {
+                                            jQuery('.responsive-map').each(function (i, obj) {
+                                                data = jQuery(this).data('gmap');
+                                                if (data) {
+                                                    var gmap = data.gmap;
+                                                    google.maps.event.trigger(gmap, 'resize');
+                                                    jQuery(this).gMapResp('fixAfterResize');
+                                                }
+                                            });
+                                        };
+                                    </script>
+                                    <div id="responsive_map_605722511" class="responsive-map" style="height:500px;width:100%;"></div>
+                                    <p>
+                                        <strong>
+                                            <br />
+                                            Akasya Plaza (Genel Merkez)<br />
+                                        </strong>Acıbadem Mah. Çeçen Sok. Akasya Residence A Kule Kat:26 No:149 Üsküdar İstanbul Türkiye
+                                    </p>
+                                    <p>
+                                        <strong>Akmerkez</strong><br />
+                                        Kültür Mah. Ahmet Adnan Saygun Cad. Ak Merkez Giriş Kat Beşiktaş İstanbul Türkiye
+                                    </p>
+                                    <p>
+                                        <strong>Park Plaza</strong><br />
+                                        Reşitpaşa Mah. Eski Büyük Dere Cad. Park Plaza Giriş Kat Sarıyer İstanbul Türkiye
+                                    </p>
+                                    <p>
+                                        <strong>Aqua Florya</strong><br />
+                                        Şenlikköy Mah. Yeşilköy Halkalı Cad. Aqua Florya Kat:3 No:2 Bakırköy İstanbul Türkiye
+                                    </p>
+                                    <p>
+                                        <strong>Quasar</strong><br />
+                                        Fulya Mah. Büyükdere Cad. Quasar İstanbul Şişli İstanbul Türkiye
+                                    </p>
+                                    <p>
+                                        <strong>Merter Platform</strong><br />
+                                        Abdurrahman Nafiz Gürman Mah. General Ali Rıza Gürcan Cad. Merter Platform B Blok Kat:4 No:45 Güngören İstanbul Türkiye
+                                    </p>
+                                    <p>
+                                        <strong>Exen İstanbul</strong><br />
+                                        Tantavi Mah. Estergon Cad. Exen İstanbul Ofis Kule Kat:11 No:161 Ümraniye İstanbul Türkiye
+                                    </p>
+                                    <p>
+                                        <strong>Nart Center</strong><br />
+                                        Kavacık Mah. Ruhi Esmer Sok. Nart Plaza No:1 Kat:4 Beykoz İstanbul Türkiye
+                                    </p>
+                                    <p>
+                                        <strong>Villa Fenerion</strong><br />
+                                        Yavuz Sultan Selim Mah. Dr. Sadık Ahmet Cad. Villa Fenerion No:24 Kat:1 No:1 Fatih İstanbul Türkiye
+                                    </p>
+                                    <p>
+                                        <strong>Office 11</strong><br />
+                                        Halkalı Merkez Mah. Basın Ekspres Cad. Office 11 A Blok Giriş Kat No:1 Küçükçekmece İstanbul Türkiye
+                                    </p>
+                                    <p>
+                                        <strong>Skyport</strong><br />
+                                        Yakuplu Mah. Hürriyet Bulvarı Skyport Kat:3 Beylikdüzü İstanbul Türkiye
+                                    </p>
+                                    <p>
+                                        <strong>Mall of İstanbul</strong><br />
+                                        Ziya Gökalp Mah. Süleyman Demirel Bulvarı Mall Off İstanbul Kat:17 Başakşehir İstanbul Türkiye
+                                    </p>
+                                    <p>
+                                        <strong>Pol Center Plaza</strong><br />
+                                        Esentepe Mah. Ecza Sok. Pol Center Şişli İstanbul Türkiye
+                                    </p>
+                                    <p>
+                                        <strong>Oyal İş Merkezi</strong><br />
+                                        Esentepe Mah. Büyükdere Cad. Oyal İş Merkezi Kat:9 Şişli İstanbul Türkiye
+                                    </p>
+                                    <p>
+                                        <strong>Beybi Giz</strong><br />
+                                        Maslak Mah. Maslak Meydan Sok. Beybi Giz Plaza Kat:15 Sarıyer İstanbul Türkiye
+                                    </p>
+                                    <p>
+                                        <strong>EGS Business Park</strong><br />
+                                        Yeşilköy Mah. Atatürk Cad. EGS Business Park B2 Blok Giriş Kat No:1 Bakırköy İstanbul Türkiye
+                                    </p>
+                                    <p>
+                                        <strong>Elhamra İş Hanı</strong><br />
+                                        Asmalı Mescit Mah. İstiklal Cad. Elhamra İş Hanı Kat:2 Beyoğlu İstanbul Türkiye
+                                    </p>
+                                    <p>
+                                        <strong>Hukukçular Towers</strong><br />
+                                        Cevizli Mah. Mustafa Kemal Cad. Hukukçular Towers A Blok Kat:18 Kartal İstanbul Türkiye
+                                    </p>
+                                    <p>
+                                        <strong>Flora Suite Office</strong><br />
+                                        Küçükbakkalköy Mah. Vedat Günyol Cad. Flora Residence Kat:28 No:2803 Ataşehir İstanbul Türkiye
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><section class="wpb_row  "><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper"></div></div></div></section>
+        </div>
+    </section>
+*@
+
+

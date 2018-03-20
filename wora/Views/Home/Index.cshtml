@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Anasayfa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ 
+    Html.RenderPartial("_HomeLessons"); //Anasayfa ilk kısım resim ve önündeki dersler
+    Html.RenderPartial("_HomeEducation"); //Anasayfa Program Şirket eğitimi Bireysel ve Öğgrenci eğitimi olan kısım
+    Html.RenderPartial("_HomePrivilege"); //Anasayfa Ayrıcalıklar
+    Html.RenderPartial("_HomeSector");
+    Html.RenderPartial("_HomePopularEducation");
+  
+}

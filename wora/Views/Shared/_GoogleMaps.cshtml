@@ -1,0 +1,230 @@
+﻿
+<script type="text/javascript">
+    var center_europe = new google.maps.LatLng(52.536273, 18.457031); // tahmini - harita ortalamak icin
+    var sehirler = [
+        new google.maps.LatLng(41.293995, 36.331358), //samsun - turkiye
+        new google.maps.LatLng(39.934486, 32.853241), //ankara - turkiye
+        new google.maps.LatLng(59.33494, 18.063583), //stockholm - isvec
+        new google.maps.LatLng(58.41628, 15.620499), //linkoping - isvec
+        new google.maps.LatLng(57.708933, 11.974556), //gothenburg - isvec
+        new google.maps.LatLng(55.605148, 13.003843), //malmo - isvec
+        new google.maps.LatLng(55.676296, 12.568338), //kopenhag - danimarka
+        new google.maps.LatLng(59.442752, 24.75319), //tallin - estonya
+        new google.maps.LatLng(56.946342, 24.104111), //riga - letonya
+        new google.maps.LatLng(54.689421, 25.280024), //vilinues - litvanya
+        new google.maps.LatLng(59.913906, 10.752241), // oslo - norvec
+        new google.maps.LatLng(50.087852, 14.420468), // prag - cek cumh.
+        new google.maps.LatLng(47.498478, 19.04076), // budapeste - macaristan
+    ];
+    var markers = [];
+    var iterator = 0;
+    var map;
+    function initialize() {
+        var ayarlar = {
+            mapTypeId: google.maps.MapTypeId.TERRAIN,
+            zoom: 4,
+            center: center_europe,
+            disableDefaultUI: true,
+            panControl: true,
+            zoomControl: true,
+            mapTypeControl: true,
+            minZoom: 2, // Sifir zoom durumundan kacalim - duplicate dunya haritasi olusmasin
+            maxZoom: 20,
+            mapTypeControlOptions: {
+                style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+                position: google.maps.ControlPosition.LEFT_BOTTOM
+            },
+            scaleControl: false,
+            streetViewControl: true,
+            overviewMapControl: false,
+        };
+        map = new google.maps.Map(document.getElementById("map"), ayarlar);
+    }
+    function drop() {
+        for (var i = 0; i < sehirler.length; i++) {
+            setTimeout(function () {
+                addMarker();
+            }, i * 300); // zamanlama degeri
+        }
+    }
+    function addMarker() {
+        markers.push(new google.maps.Marker({
+            position: sehirler[iterator],
+            map: map,
+            draggable: false,
+            animation: google.maps.Animation.DROP
+        }));
+        iterator++;
+    }
+
+
+</script>
+
+
+
+<div id="harita_canvas" style="width: 800px; height: 600px;">map div</div>
+
+<script>
+
+    var markers = [
+        {
+        "latitude": '41.0768114',
+         "longitude": '29.0270342',
+        "key": '1', html: 'Akmerkez<br>Kültür Mah. Ahmet Adnan Saygun Cad. Ak Merkez Giriş Kat Beşiktaş İstanbul Türkiye',
+        popup: false,
+        flat: true,
+     
+    }, {
+        "latitude": '41.1083742',
+         "longitude": '29.0161321',
+        "key": '2', html: 'Park Plaza<br>Reşitpaşa Mah. Eski Büyük Dere Cad. Park Plaza Giriş Kat Sarıyer İstanbul Türkiye',
+        popup: false,
+        flat: true
+     
+    }, {
+        "latitude": '40.9660078',
+         "longitude": '28.7952733',
+        "key": '3', html: 'Aqua Florya<br>Şenlikköy Mah. Yeşilköy Halkalı Cad. Aqua Florya Kat:3 No:2 Bakırköy İstanbul Türkiye',
+        popup: false,
+        flat: true
+      
+    }, {
+        "latitude": '41.065774',
+         "longitude": '28.9981783',
+        "key": '4', html: 'Quasar<br>Fulya Mah. Büyükdere Cad. Quasar İstanbul Şişli İstanbul Türkiye',
+        popup: false,
+        flat: true
+     
+    }, {
+        "latitude": '41.008061',
+         "longitude": '28.8924993',
+        "key": '5', html: 'Merter Platform<br>Abdurrahman Nafiz Gürman Mah. General Ali Rıza Gürcan Cad. Merter Platform B Blok Kat:4 No:45 Güngören İstanbul Türkiye',
+        popup: false,
+        flat: true
+       
+    }, {
+        "latitude": '41.0222996',
+         "longitude": '29.0893349',
+        "key": '6', html: 'Exen İstanbul<br>Tantavi Mah. Estergon Cad. Exen İstanbul Ofis Kule Kat:11 No:161 Ümraniye İstanbul Türkiye',
+        popup: false,
+        flat: true
+    }, {
+        "latitude": '41.094445',
+         "longitude": '29.0884163',
+        "key": '7', html: 'Nart Center<br>Kavacık Mah. Ruhi Esmer Sok. Nart Plaza No:1 Kat:4 Beykoz İstanbul Türkiye',
+        popup: false,
+        flat: true
+    }, {
+        "latitude": '41.0288896',
+         "longitude": '28.9503785',
+        "key": '8', html: 'Villa Fenerion<br>Yavuz Sultan Selim Mah. Dr. Sadık Ahmet Cad. Villa Fenerion No:24 Kat:1 No:1 Fatih İstanbul Türkiye',
+        popup: false,
+        flat: true
+    }, {
+        "latitude": '41.018535',
+         "longitude": '28.8252271',
+        "key": '9', html: 'Office 11<br>Halkalı Merkez Mah. Basın Ekspres Cad. Office 11 A Blok Giriş Kat No:1 Küçükçekmece İstanbul Türkiye',
+        popup: false,
+        flat: true
+    }, {
+        "latitude": '41.0075283',
+         "longitude": '28.6586485',
+        "key": '10', html: 'Skyport<br>Yakuplu Mah. Hürriyet Bulvarı Skyport Kat:3 Beylikdüzü İstanbul Türkiye',
+        popup: false,
+        flat: true
+    }, {
+        "latitude": '41.063272',
+         "longitude": '28.8051438',
+        "key": '11', html: 'Mall of İstanbul<br>Ziya Gökalp Mah. Süleyman Demirel Bulvarı Mall Off İstanbul Kat:17 Başakşehir İstanbul Türkiye',
+        popup: false,
+        flat: true
+    }, {
+        "latitude": '41.0786839',
+         "longitude": '29.0080918',
+        "key": '12', html: 'Pol Center Plaza<br>Esentepe Mah. Ecza Sok. Pol Center Şişli İstanbul Türkiye',
+        popup: false,
+        flat: true
+    }, {
+        "latitude": '41.0038107',
+         "longitude": '29.054674',
+        "key": '13', html: 'Akasya Tower Residence<br>Acıbadem Mah. Çeçen Sok. Akasya Residence A Kule Kat:26 No:149 Üsküdar İstanbul Türkiye',
+        popup: false,
+        flat: true
+    }, {
+        "latitude": '41.0685925',
+         "longitude": '29.0087184',
+        "key": '14', html: 'Oyal İş Merkezi<br>Esentepe Mah. Büyükdere Cad. Oyal İş Merkezi Kat:9 Şişli İstanbul Türkiye',
+        popup: false,
+        flat: true
+    }, {
+        "latitude": '41.1099949',
+         "longitude": '29.0183804',
+        "key": '15', html: 'Beybi Giz<br>Maslak Mah. Maslak Meydan Sok. Beybi Giz Plaza Kat:15 Sarıyer İstanbul Türkiye',
+        popup: false,
+        flat: true
+    }, {
+        "latitude": '40.9870639',
+         "longitude": '28.8305176',
+        "key": '16', html: 'EGS Business Park<br>Yeşilköy Mah. Atatürk Cad. EGS Business Park B2 Blok Giriş Kat No:1 Bakırköy İstanbul Türkiye',
+        popup: false,
+        flat: true
+    }, {
+        "latitude": '41.0326172',
+         "longitude": '28.9740712',
+        "key": '17', html: 'Elhamra İş Hanı<br>Asmalı Mescit Mah. İstiklal Cad. Elhamra İş Hanı Kat:2 Beyoğlu İstanbul Türkiye',
+        popup: false,
+        flat: true
+    }, {
+        "latitude": '40.9112342',
+         "longitude": '29.1788311',
+        "key": '18', html: 'Hukukçular Towers<br>Cevizli Mah. Mustafa Kemal Cad. Hukukçular Towers A Blok Kat:18 Kartal İstanbul Türkiye',
+        popup: false,
+        flat: true
+        }, {
+            "latitude": '40.9808935',
+            "longitude": '29.1009687',
+            "key": '19', html: 'Flora Suite Office<br>Küçükbakkalköy Mah. Vedat Günyol Cad. Flora Residence Kat:28 No:2803 Ataşehir İstanbul Türkiye',
+            popup: false,
+            flat: true
+        }
+    ];
+
+
+
+
+    var myLatlng = new google.maps.LatLng(data.latitude, data.longitude);
+    var markers = [
+        {
+            "title": 'Aksa Beach',
+            "lat": '19.1759668',
+            "lng": '72.79504659999998',
+            "description": 'Aksa Beach is a popular beach and a vacation spot in Aksa village at Malad, Mumbai.'
+        },
+        {
+            "title": 'Juhu Beach',
+            "lat": '19.0883595',
+            "lng": '72.82652380000002',
+            "description": 'Juhu Beach is one of favourite tourist attractions situated in Mumbai.'
+        },
+        {
+            "title": 'Girgaum Beach',
+            "lat": '18.9542149',
+            "lng": '72.81203529999993',
+            "description": 'Girgaum Beach commonly known as just Chaupati is one of the most famous public beaches in Mumbai.'
+        },
+        {
+            "title": 'Jijamata Udyan',
+            "lat": '18.979006',
+            "lng": '72.83388300000001',
+            "description": 'Jijamata Udyan is situated near Byculla station is famous as Mumbai (Bombay) Zoo.'
+        },
+        {
+            "title": 'Sanjay Gandhi National Park',
+            "lat": '19.2147067',
+            "lng": '72.91062020000004',
+            "description": 'Sanjay Gandhi National Park is a large protected area in the northern part of Mumbai city.'
+        }
+    ];
+
+
+</script>
