@@ -605,6 +605,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EgitimController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -631,6 +632,7 @@
     <Content Include="Views\Home\Lokasyon.cshtml" />
     <Content Include="Views\Shared\_GoogleMaps.cshtml" />
     <Content Include="Views\Home\blog.cshtml" />
+    <Content Include="Views\Egitim\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
